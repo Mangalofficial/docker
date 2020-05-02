@@ -1,0 +1,29 @@
+* Technologies used:
+ - Docker on the host OS (Redhat Linux 8)
+ - Docker images(mysql:5.7, nextcloud:latest)
+* Features used in Docker:
+ - Docker images to makes setup.
+
+   docker pull mysql:5.7
+   docker pull nextcloud:latest
+
+ - Used Storage concept for database and web pages.
+
+   mysql_storage:/var/lib/mysql
+   cloud_storage:/var/www/html
+ 
+ - Port Address Translation(PAT) for connectivity.
+  
+   ports:
+     - 4567:80
+
+* To start Web-app infrastructure:
+
+ docker-compose up -d
+
+* To stop Web-app:
+
+ docker-compose stop
+
+#######Source Code : "docker-compose.yml"#############
+ 
